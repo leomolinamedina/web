@@ -66,10 +66,52 @@
         <main class="agua">
             <section>
                 <header class="img-before portada">
-                    <h2 >Contacta Con Nosotros</h2>
+                    <h2>Contacta Con Nosotros</h2>
                 </header>
                 <article>
                     <h3>Formulario de contacto</h3>
+                    <form action="enviado.html" method="post" class="form" id="form">
+                        <fieldset>
+                            <legend>Datos Personales</legend>
+                            <ul>
+                                <li>
+                                    <label for="name">Nombre</label>
+                                    <input type="text" placeholder="Tu nombre" name="name" id="name" required />
+                                </li>
+                                <li>
+                                    <label for="email">E-mail</label>
+                                    <input type="email" placeholder="Correo electrónico" name="email" id="email" required />
+                                </li>
+                                <li>
+                                    <label for="tfno">Teléfono</label>
+                                    <input type="tel" placeholder="Teléfono" name="tfno" id="tfno" />
+                                </li>
+                                <li>
+                                    <label for="edad">Edad</label>
+                                    <input type="number" placeholder="Tu edad" name="edad" id="edad" />
+                                </li>
+                                <li>
+                                    <input type="radio" name="coche" id="coche-si" value="si" />
+                                    <label for="coche-si">Si</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="coche" id="coche-no" value="no" />
+                                    <label for="coche-no">No</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="acepto" id="acepto" required />
+                                    <label for="acepto">
+                                        Acepto el tratamiento de mis datos personales. Más información en
+                                        <a href="#">Política de tratamiento de datos personales</a>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="mensaje">Mensaje</label>
+                                    <textarea placeholder="Escribe tu mensaje aquí" name="mensaje" id="mensaje" cols="30" rows="5" required></textarea>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </form>
                 </article>
             </section>
         </main>
