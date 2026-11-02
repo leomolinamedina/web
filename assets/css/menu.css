@@ -40,7 +40,7 @@ nav.principal {
         transition: 0.3s;
 
         &:focus-visible {
-            outline: 2px solid; /* el color va en colores.css */
+            outline: 2px solid;
             outline-offset: -2px;
         }
 
@@ -58,36 +58,31 @@ nav.principal {
     & #icon-menu + label {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 0.75rem; /* Espacio entre el icono y el texto opcional del label */
+        justify-content: right;
+        gap: 0.75rem;
         line-height: 3.5rem;
-        padding-inline: 1.5rem;
+        padding-right: 4vw;
         font-weight: bold;
         cursor: pointer;
         user-select: none;
         color: #ffffff;
 
-        /* Generamos las tres líneas horizontales por defecto (Menú Cerrado) */
         &::before {
             content: "";
             display: inline-block;
             width: 1.25rem;
             height: 1rem;
-            /* Patrón de líneas usando gradientes CSS puros */
             background: linear-gradient(to bottom, currentColor 0%, currentColor 20%, transparent 20%, transparent 40%, currentColor 40%, currentColor 60%, transparent 60%, transparent 80%, currentColor 80%, currentColor 100%);
         }
     }
 
-    /* Cambiar el icono a flecha hacia abajo cuando el menú está abierto */
     & #icon-menu:checked + label::before {
         content: "";
-        /* Dibujamos una flecha hacia abajo usando un triángulo con border o clip-path */
         width: 0.8rem;
         height: 0.5rem;
         background-color: currentColor;
-        /* Forma de flecha hacia abajo con clip-path */
         clip-path: polygon(0 0, 100% 0, 50% 100%);
-        background: currentColor; /* Se adapta automáticamente al color del texto */
+        background: currentColor;
     }
 
     & #icon-menu:focus-visible + label {
@@ -106,7 +101,6 @@ nav.principal {
             border-bottom: 1px solid;
         }
 
-        /* Submenú móvil: SIEMPRE ABIERTO */
         & ul {
             display: flex;
             flex-direction: column;
@@ -117,14 +111,14 @@ nav.principal {
                 border-bottom: 0;
             }
         }
-
-        /* & li:is(:hover, :focus-within) > ul {
-            display: block;
-        } */
     }
 
     & #icon-menu:checked ~ ul {
         display: flex;
+    }
+
+    & > ul {
+        padding-right: var(--padding-body-l);
     }
 
     /* ===== Escritorio ===== */
@@ -137,8 +131,9 @@ nav.principal {
         & > ul {
             display: flex;
             flex-direction: row;
-            justify-content: center;
+            justify-content: right;
             align-items: center;
+            padding-right: 7.5vw;
 
             & > li {
                 position: relative;
@@ -170,6 +165,12 @@ nav.principal {
                     display: block;
                 }
             }
+        }
+    }
+
+    @media (min-width: 1024px) {
+        & > ul {
+            padding-right: var(--padding-body-l);
         }
     }
 }
