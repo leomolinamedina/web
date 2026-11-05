@@ -11,6 +11,9 @@
         <meta name="robots" content="noIndex, noFollow" />
         <!-- Breve descripción del sitio que se verá en los resultados de búsqueda -->
         <meta name="description" content="Sitio web de prueba elaborado en el curso de Confección y Publicación de Páginas Web (IFCD0110). Unidad Formativa UF1303, Elaboración de hojas de estilos" />
+
+        <!-- Favicon -->
+         <link rel="icon" type="image/svg+xml" href="assets/svg/logo-cuadrado.svg">
         <!-- Google fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,7 +38,7 @@
         <header>
             <a href="index.html" class="link-logo" title="Página principal">
                 <figure class="logo"></figure>
-                <h1 class="pechado">Flex box</h1>
+                <h1 class="pechado">Web</h1>
             </a>
         </header>
         <nav class="principal" aria-label="Navegación principal">
@@ -45,16 +48,25 @@
             <label for="icon-menu" class="icon-menu" aria-label="Abrir/Cerrar menú">Menú</label>
             <ul>
                 <li>
-                    <a href="../index.html">Inicio</a>
+                    <a href="index.html">Inicio</a>
                 </li>
                 <li>
                     <a href="#">Temas</a>
                     <ul>
                         <li>
-                            <a href="textos.html">Textos</a>
+                            <a href="temas/formularios.html">Formularios HTML</a>
                         </li>
                         <li>
-                            <a href="imagenes.html">Imagenes</a>
+                            <a href="temas/imagenes.html">Imagenes</a>
+                        </li>
+                        <li>
+                            <a href="temas/transiciones.html">Transiciones</a>
+                        </li>
+                        <li>
+                            <a href="temas/Transformers.html">Transformers</a>
+                        </li>
+                        <li>
+                            <a href="temas/carrouselCSS3.html">Carrousel CSS</a>
                         </li>
                     </ul>
                 </li>
@@ -64,15 +76,12 @@
                 <li>
                     <a href="pages/contacto.html">Contacto</a>
                 </li>
-                <li>
-                    <a href="temas/test-form.html">Formulario de prueba</a>
-                </li>
             </ul>
         </nav>
         <main class="agua">
             <section>
                 <header class="img-before portada">
-                    <h2>Imágenes en CSS</h2>
+                    <h2>Inicio</h2>
                 </header>
 
                 <article class="lista-referencias">
@@ -84,252 +93,6 @@
                         <li><a class="hvr-underline-from-center" href="assets/pdf/CSS_posicionamiento_relativo_absoluto.pdf" target="_blank" title="Abrir documento PDF posicionamiento en CSS">background-image | MDN Web Docs (moz://a) (.PDF)</a></li>
                         <li><a class="hvr-underline-from-center" href="assets/pdf/UF1303_Elaboracion-hojas-de-estilo.pdf" target="_blank" title="Abrir documento PDF Manual de la UF1303">Manual de la UF1303 Creacion hojas de estilos &nbsp; (PDF)</a></li>
                         <li><a class="hvr-underline-from-center" href="https://www.w3docs.com/learn-css/the-ultimate-guide-to-flexbox" target="_blank" title="Ver tutorial de la w3s">La Guia Definitiva de Flexbox | w3Schols</a></li>
-                    </ul>
-                </article>
-
-                <article>
-                    <h3>Transiciones CSS3</h3>
-                    <figure class="transicion-color">
-                        <span></span>
-                    </figure>
-                </article>
-
-                <article>
-                    <h3>Transiciones CSS3</h3>
-                    <figure class="transicion-arco">
-                        <span></span>
-                    </figure>
-                </article>
-
-                <article>
-                    <h3>Transformers</h3>
-                    <p>La propiedad transform mueve, gira, escala e inclina elementos sin alterar el diseño de la página: el resto de elementos no se entera de que algo se ha movido. Por eso es la favorita para hacer animaciones fluidas.</p>
-                    <p><strong>Las cuatro funciones básicas</strong></p>
-
-                    <ul class="enlaces-pdf">
-                        <li><code>translate()</code>: Mover en los ejes X | y | z</li>
-                        <li><code>rotate()</code>: Girar</li>
-                        <li><code>translate()</code>: Escalar</li>
-                        <li><code>translate()</code>: Inclinar</li>
-                    </ul>
-
-                    <p>Pasa el ratón por cada ítem para ver el estilos transform</p>
-                    <p><code>transform: </code></p>
-
-                    <ul class="demo">
-                        <li>
-                            <span>translateX</span>
-                            <figure class="translateX">
-                                <figcaption>X</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>translateY</span>
-                            <figure class="translateY">
-                                <figcaption>Y</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>translate</span>
-                            <figure class="translate">
-                                <figcaption>X, Y</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>rotate(45deg)</span>
-                            <figure class="rotate45">
-                                <figcaption>45º</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>rotate(-90deg)</span>
-                            <figure class="rotate-90">
-                                <figcaption>-90º</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>rotate(1turn)</span>
-                            <figure class="rotate360">
-                                <figcaption>1 vuelta</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>scaleX(1.5)</span>
-                            <figure class="scaleX">
-                                <figcaption>scaleX</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>scaleY(0.5)</span>
-                            <figure class="scaleY">
-                                <figcaption>escaleY</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>scale(1.2)</span>
-                            <figure class="scale">
-                                <figcaption>scale</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>skewX</span>
-                            <figure class="skewX">
-                                <figcaption>skewX (25deg)</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>skewY</span>
-                            <figure class="skewY">
-                                <figcaption>skewY (25deg)</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>skew</span>
-                            <figure class="skew">
-                                <figcaption>skew (20deg, 10deg)</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <div>rotate(45deg)</div>
-                            <span>transform-origin</span>
-                            <figure class="rotate45 origin-center">
-                                <figcaption>center</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <div>rotate(45deg)</div>
-                            <span>transform-origin</span>
-                            <figure class="rotate45 origin-top-left">
-                                <figcaption>top left</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <div>rotate(45deg)</div>
-                            <span>transform-origin</span>
-                            <figure class="rotate45 origin-bottom-right">
-                                <figcaption>bottom right</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>A: translate rotate</span>
-                            <figure class="translate-rotate">
-                                <figcaption>A</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>B: rotate translate</span>
-                            <figure class="rotate-translate">
-                                <figcaption>B</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <span>Combina 3</span>
-                            <figure class="combina3">
-                                <figcaption>Levanta!</figcaption>
-                            </figure>
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="galeria-flex">
-                    <h3>Galería de imágenes</h3>
-                    <p>Parrilla de imágenes con Flexbox</p>
-
-                    <ul class="galeria">
-                        <li>
-                            <figure class="img-before diapositiva-1">
-                                <figcaption>Foto 1</figcaption>
-                            </figure>
-                        </li>
-
-                        <li>
-                            <figure class="img-before diapositiva-2">
-                                <figcaption>Foto 2</figcaption>
-                            </figure>
-                        </li>
-
-                        <li>
-                            <figure class="img-before diapositiva-3">
-                                <figcaption>Foto 3</figcaption>
-                            </figure>
-                        </li>
-
-                        <li>
-                            <figure class="img-before diapositiva-4">
-                                <figcaption>Foto 4</figcaption>
-                            </figure>
-                        </li>
-
-                        <li>
-                            <figure class="img-before diapositiva-5">
-                                <figcaption>Foto 5</figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <figure class="img-before diapositiva-1">
-                                <figcaption>Foto 1</figcaption>
-                            </figure>
-                        </li>
-
-                        <li>
-                            <figure class="img-before diapositiva-2">
-                                <figcaption>Foto 2</figcaption>
-                            </figure>
-                        </li>
-
-                        <li>
-                            <figure class="img-before diapositiva-3">
-                                <figcaption>Foto 3</figcaption>
-                            </figure>
-                        </li>
-
-                        <li>
-                            <figure class="img-before diapositiva-4">
-                                <figcaption>Foto 4</figcaption>
-                            </figure>
-                        </li>
-
-                        <li>
-                            <figure class="img-before diapositiva-5">
-                                <figcaption>Foto 5</figcaption>
-                            </figure>
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="carrousel-container">
-                    <h3>Simple Carrousel Pure CSS3</h3>
-                    <p>Galería de imágenes en animación infinita automática tipo Carrousel</p>
-                    <ul class="carrousel">
-                        <li>
-                            <figure class="img-before diapositiva-1">
-                                <figcaption>Color celeste <small>(#3b82f6)</small></figcaption>
-                            </figure>
-                        </li>
-
-                        <li>
-                            <figure class="img-before diapositiva-2">
-                                <figcaption>Color Amarillento <small>(#bdc011)</small></figcaption>
-                            </figure>
-                        </li>
-
-                        <li>
-                            <figure class="img-before diapositiva-3">
-                                <figcaption>Color rosado <small>(#d265b5)</small></figcaption>
-                            </figure>
-                        </li>
-
-                        <li>
-                            <figure class="img-before diapositiva-4">
-                                <figcaption>Color Azulón <small>(#3711c0)</small></figcaption>
-                            </figure>
-                        </li>
-
-                        <li>
-                            <figure class="img-before diapositiva-5">
-                                <figcaption>Color Verdoso <small>(#11c09d)</small></figcaption>
-                            </figure>
-                        </li>
                     </ul>
                 </article>
             </section>
