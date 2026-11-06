@@ -84,7 +84,8 @@ body {
         z-index: 1;
     }
 
-    & main > section > article {
+    & main > section > article,
+    footer {
         padding: 5vh 4vw;
     }
 }
@@ -112,7 +113,8 @@ body {
             padding-left: 7.5vw;
         }
 
-        & main > section > article {
+        & main > section > article,
+        footer {
             padding-left: 7.5vw;
             padding-right: 7.5vw;
         }
@@ -129,7 +131,8 @@ body {
             padding-left: 10vw;
         }
 
-        & main > section > article {
+        & main > section > article,
+        footer {
             padding-left: 10vw;
             padding-right: 10vw;
         }
@@ -144,12 +147,33 @@ span {
     color: var(--color-texto);
 }
 
+h2 {
+    font-size: var(--font-size-xxxl);
+}
+
 h3 {
     color: var(--color-1);
+    font-size: var(--font-size-xxl);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+}
+
+h5 {
+    font-size: var(--font-size-l);
+}
+
+h6 {
+    font-size: var(--font-size-m);
+}
+
+p {
+    font-size: var(--font-size-s);
 }
 
 .underline,
-a:not(.link-logo) {
+a:not(.link-logo, .no-border) {
     display: inline-block;
     vertical-align: middle;
     transform: perspective(1px) translateZ(0);

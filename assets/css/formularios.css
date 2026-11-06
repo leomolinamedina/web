@@ -2,11 +2,12 @@ section.textos article {
     margin: 0 auto;
 }
 form.form {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
 }
 
 form.form fieldset {
-    margin: 1em;
+    margin: 1em 0;
     border-radius: 5px;
 }
 
@@ -26,7 +27,6 @@ form.form fieldset legend {
 
 form.form ul {
     margin: 0;
-    padding: 2em;
     list-style: none;
     display: flex;
     flex-wrap: wrap;

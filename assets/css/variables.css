@@ -1,17 +1,17 @@
 :root {
     /* Font Size */
     /* h1 */
-    --font-size-s: clamp(0.875rem, 0.83rem + 0.2vw, 1rem);
-    /* h2 */
     --font-size-xxxl: clamp(2.25rem, 1.6rem + 3.2vw, 1.8rem);
-    /* h3 */
+    /* h2 */
     --font-size-xxl: clamp(1.6rem, 1.4rem + 1.5vw, 1.7rem);
-    /* h4 */
+    /* h3 */
     --font-size-xl: clamp(1.4rem, 1.2rem + 1.5vw, 1.6rem);
-    /* h5 */
+    /* h4 */
     --font-size-l: clamp(1.2rem, 1rem + 1.5vw, 1.5rem);
-    /* h6 */
+    /* h5 */
     --font-size-m: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    /* h6 */
+    --font-size-s: clamp(0.875rem, 0.83rem + 0.2vw, 1rem);
 
     /* colores del sitio */
     --color-h2: #fff;
@@ -22,6 +22,8 @@
     --color-texto: #666666;
     --bg-body: #fefefe;
     --bg-nav: #283a6f;
+    --bg-footer: #283a6f;
+    --color-a-footer: #fff;
 
     --h-portada: 40vh;
     --padding-body-l: 10vw;
