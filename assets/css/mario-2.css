@@ -44,7 +44,6 @@ body.jsMario {
             }
         }
         article#galeria-mario {
-            margin-bottom: 25vh;
             ul {
                 /* display: flex; */
                 /* flex-wrap: wrap; */
@@ -72,6 +71,11 @@ body.jsMario {
                             font-size: 0.85rem;
                             background: #00000080;
                             color: white;
+                            color: #000;
+                            bottom: 0;
+                            height: fit-content;
+                            visibility: visible;
+                            opacity: 1;
                         }
                     }
                 }
@@ -131,3 +135,26 @@ body.jsMario {
     }
 }
 
+body.jsMario {
+    & main > section.marioClass {
+        article#paleta-colores {
+            ul.paleta {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                padding: 0;
+                list-style: none;
+
+                li {
+                    padding: 0.5em 1em;
+                    border: 2px solid #333;
+                    border-radius: 5px;
+                    text-align: center;
+                    color: white;
+                    text-shadow: 1px 1px 2px black;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

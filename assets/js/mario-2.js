@@ -34,8 +34,34 @@ console.log(figuras)
 
 figuras.forEach(function (figura, indice) {
     figura.style.backgroundColor = bgColorsGaleriaMario[indice];
+    figura.onclick = pintarFigura;
 });
 
 captions.forEach(function (caption, indice) {
     caption.textContent = personajesGaleriaMario[indice];
 });
+
+const info = document.querySelector("#info");
+let itemsPaletaColores = document.querySelectorAll("#paleta-colores li");
+
+let colorSeleccionado = null; 
+
+itemsPaletaColores.forEach(function (li) {
+    li.style.backgroundColor = li.textContent;
+    li.onclick = seleccionarColor;
+});
+
+function seleccionarColor() {
+    colorSeleccionado = this.textContent;
+    info.textContent = `Color seleccionado: ${colorSeleccionado}`;
+}
+
+function pintarFigura() {
+    if (colorSeleccionado === null) {
+        info.textContent = "Primero elige un color de la paleta";
+        return;
+    }
+
+    this.style.backgroundColor = colorSeleccionado;
+    info.textContent = `${this.textContent} ahora es ${colorSeleccionado}`;
+}
