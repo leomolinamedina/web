@@ -54,7 +54,7 @@
                     <h3>Escenario de Mario</h3>
                     <div id="escenario" class="escenario">
                         <figure class="mario" id="mario">
-                            <img src="../assets/css/images/super-mario-bross.webp" alt="Mario Bros" draggable="false" />
+                            <img src="../assets/css/images/marioBros/super-mario-bross.webp" alt="Mario Bros" draggable="false" />
                             <figcaption>Mario</figcaption>
                         </figure>
                     </div>
@@ -119,11 +119,21 @@
         </main>
         <footer id="footer">test</footer>
     </body>
-    <script>
-        $(function () {
-            $("#header").load("../layouts/header.html");
-            $("#menu").load("../layouts/menu.html");
-            $("#footer").load("../layouts/footer.html");
-        });
+    <script type="module">
+        async function includeHTML(selector, url) {
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(`Error cargando ${url}: ${response.status}`);
+            }
+
+            document.querySelector(selector).innerHTML = await response.text();
+        }
+
+        await Promise.all([
+            includeHTML("#header", "../layouts/header.html"),
+            includeHTML("#menu", "../layouts/menu.html"),
+            includeHTML("#footer", "../layouts/footer.html"),
+        ]);
     </script>
 </html>

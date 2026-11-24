@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <!-- Juego de caracteres de casi todos los idiomas humanos (incluidos ñ, tildes ...) -->
+        <meta charset="utf-8" />
+        <!-- Escala inicial y renderizado _responsive_ por el ancho del dispositivo -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Compatibilidad con Microsoft Explorer -->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- Indéxame NO y sígueme NO -->
+        <meta name="robots" content="noIndex, noFollow" />
+        <!-- Breve descripción del sitio que se verá en los resultados de búsqueda -->
+        <meta name="description" content="Sitio web de prueba elaborado en el curso de Confección y Publicación de Páginas Web (IFCD0110). Unidad Formativa UF1303, Elaboración de hojas de estilos" />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="../assets/svg/logo-cuadrado.svg" />
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet" />
+        <!-- Utilícese una hoja de estilos Normalize -->
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" />
+        <!-- Ruta a las hojas de estilos -->
+        <link rel="stylesheet" href="../assets/css/variables.css" />
+        <link rel="stylesheet" href="../assets/css/tipografias.css" />
+        <link rel="stylesheet" href="../assets/css/visibilidad.css" />
+        <link rel="stylesheet" href="../assets/css/transiciones.css" />
+        <link rel="stylesheet" href="../assets/css/galeria.css" />
+        <link rel="stylesheet" href="../assets/css/carusel.css" />
+        <link rel="stylesheet" href="../assets/css/menu.css" />
+        <link rel="stylesheet" href="../assets/css/estilos.css" />
+        <link rel="stylesheet" href="../assets/css/formularios.css" />
+        <link rel="stylesheet" href="../assets/css/tipografias.css" />
+        <link rel="stylesheet" href="../assets/css/footer.css" />
+        <link rel="stylesheet" href="../assets/css/queries.css" />
+        <link rel="stylesheet" href="../assets/css/mario-2.css" />
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <!-- <script src="../assets/js/mario.js" defer></script> -->
+        <script src="../assets/js/mario-2.js" defer></script>
+
+        <!-- Título de la pestaña del navegador -->
+        <title>Pagina de Mario</title>
+    </head>
+
+    <body class="jsMario">
+        <header id="header"></header>
+        <nav id="menu" class="principal" aria-label="Navegación principal"></nav>
+        <main class="agua">
+            <section class="marioClass">
+                <header class="img-before portada">
+                    <h2>Aprende JavaScript con Mario</h2>
+                </header>
+                <article class="game">
+                    <h3>Escenario de Mario</h3>
+                    <div id="escenario" class="escenario">
+                        <figure class="mario" id="mario">
+                            <img src="../assets/css/images/marioBros/super-mario-bross.webp" alt="Mario Bros" draggable="false" />
+                            <figcaption>Mario</figcaption>
+                        </figure>
+                    </div>
+                </article>
+                <article id="galeria-mario">
+                    <h3>Galería de Mario</h3>
+                    <output id="info" class="info">¡Listo! Mario está esperando órdenes.</output>
+                    <ul class="galeria">
+                        <li>
+                            <figure class="img-before">
+                                <figcaption></figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure class="img-before">
+                                <figcaption></figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure class="img-before">
+                                <figcaption></figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure class="img-before">
+                                <figcaption></figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure class="img-before">
+                                <figcaption></figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure class="img-before">
+                                <figcaption></figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+
+        <footer id="footer"></footer>
+    </body>
+    <script type="module">
+        async function includeHTML(selector, url) {
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(`Error cargando ${url}: ${response.status}`);
+            }
+
+            document.querySelector(selector).innerHTML = await response.text();
+        }
+
+        await Promise.all([
+            includeHTML("#header", "../layouts/header.html"),
+            includeHTML("#menu", "../layouts/menu.html"),
+            includeHTML("#footer", "../layouts/footer.html"),
+        ]);
+    </script>
+</html>

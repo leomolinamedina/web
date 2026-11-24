@@ -106,11 +106,34 @@ body.jsMario {
             border: 2px solid #ddd;
             border-radius: 14px;
             background: #fafafa;
+            margin: 0 4vw;
 
             &.transformaciones {
                 /* azul Luigi/Mario */
                 --color-base: #049cd8;
                 --color-oscuro: #04719c;
+            }
+        }
+    }
+}
+
+@media (min-width: 40rem) {
+    body.jsMario {
+        main > section.marioClass {
+            & > article.controles {
+                margin-left: 7.5vw;
+                margin-right: 7.5vw;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    body.jsMario {
+        main > section.marioClass {
+            & > article.controles {
+                margin-left: 10vw;
+                margin-right: 10vw;
             }
         }
     }
