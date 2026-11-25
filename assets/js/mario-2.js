@@ -1,39 +1,50 @@
+
 "use strict";
-/*
-let figuras = document.querySelectorAll("#galeria-mario figure");
-
-let imagenesMarioBros = [
-    "../assets/css/images/marioBros/mario.webp",
-    "../assets/css/images/marioBros/bowser.webp",
-    "../assets/css/images/marioBros/king-boo.webp",
-    "../assets/css/images/marioBros/lakitu.webp",
-    "../assets/css/images/marioBros/luigi.webp",
-    "../assets/css/images/marioBros/setaAzul.webp",
-    "../assets/css/images/marioBros/wario.webp",
-    "../assets/css/images/marioBros/yoshi.webp"
-]
-
-figuras.forEach(function (figura, indice) {
-    figura.style.backgroundImage = `url("${imagenesMarioBros[indice]}")`
-});
-
-console.log(figuras);
-*/
 
 const ulGaleriaMario = document.querySelector("#galeria-mario ul.galeria");
 ulGaleriaMario.classList.add("personajes");
 
-let personajesGaleriaMario = ["Mario", "Luigi", "Yoshi", "Bowser", "Wario", "King-Boo"];
+let personajesGaleriaMario = ["Mario", "Luigi", "Yoshi", "Bowser", "Wario", "King-Boo", "Lakitu", "Seta azul"];
 
-let bgColorsGaleriaMario = ["steelblue", "orange", "gold", "orchid", "lightyellow", "palegreen"];
+let bgColorsGaleriaMario = ["steelblue", "orange", "gold", "orchid", "lightyellow", "palegreen", "tomato", "dodgerblue"];
 
+// Primer item
+let itemGaleria = document.createElement("li");
+
+let figureGaleria = document.createElement("figure");
+figureGaleria.classList.add("img-before", "foto-mario");
+figureGaleria.style.backgroundColor = bgColorsGaleriaMario[6];
+
+let figcaptionGaleria = document.createElement("figcaption");
+figcaptionGaleria.textContent = personajesGaleriaMario[6];
+
+itemGaleria.appendChild(figureGaleria);
+figureGaleria.appendChild(figcaptionGaleria);
+ulGaleriaMario.appendChild(itemGaleria);
+
+
+// Segundo item
+let itemGaleria2 = document.createElement("li");
+
+let figureGaleria2 = document.createElement("figure");
+figureGaleria2.classList.add("img-before", "foto-mario");
+figureGaleria2.style.backgroundColor = bgColorsGaleriaMario[7];
+
+let figcaptionGaleria2 = document.createElement("figcaption");
+figcaptionGaleria2.textContent = personajesGaleriaMario[7];
+
+itemGaleria2.appendChild(figureGaleria2);
+figureGaleria2.appendChild(figcaptionGaleria2);
+ulGaleriaMario.appendChild(itemGaleria2);
+
+
+// Seleccionar todas las figuras y captions
 let figuras = document.querySelectorAll("#galeria-mario figure");
 let captions = document.querySelectorAll("#galeria-mario figcaption");
 
-console.log(figuras)
-
 figuras.forEach(function (figura, indice) {
     figura.style.backgroundColor = bgColorsGaleriaMario[indice];
+    figura.classList.add("foto-mario");
     figura.onclick = pintarFigura;
 });
 
@@ -44,7 +55,7 @@ captions.forEach(function (caption, indice) {
 const info = document.querySelector("#info");
 let itemsPaletaColores = document.querySelectorAll("#paleta-colores li");
 
-let colorSeleccionado = null; 
+let colorSeleccionado = null;
 
 itemsPaletaColores.forEach(function (li) {
     li.style.backgroundColor = li.textContent;
