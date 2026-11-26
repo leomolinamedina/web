@@ -5,8 +5,9 @@
 // ===================================
 
 class Mario {
-    constructor(nombre = "Mario") {
+    constructor(nombre = "Mario", sprite = "../assets/css/images/marioBros/super-mario-bross.webp") {
         this.nombre = nombre;
+        this.sprite = sprite;
         this.x = 20;
         this.scale = 1;
         this.rotation = 0;
@@ -20,7 +21,7 @@ class Mario {
 
         this.elemento.innerHTML = `
             <img
-                src="../assets/css/images/marioBros/super-mario-bross.webp"
+                src="${sprite}"
                 alt="${this.nombre}"
                 draggable="false"
             >
@@ -180,6 +181,33 @@ class Mario {
 }
 
 // ===================================
+// 2. Personajes
+// ===================================
+
+const ruta = "../assets/css/images/marioBros/super-mario-bross.webp";
+const sprite = [
+    "mario.webp",
+    "luigi.webp",
+    "yoshi.webp",
+    "bowser.webp",
+    "king-boo.webp",
+    "lakitu.webp",
+    "setaAzul.webp",
+    "wario.webp",
+];
+
+const nombres = [
+    "Mario",
+    "Luigi",
+    "Yoshi",
+    "Bowser",
+    "King Boo",
+    "Lakitu",
+    "Seta Azul",
+    "Wario",
+]
+
+// ===================================
 // 2. VARIABLES DE CONTROL
 // ===================================
 
@@ -197,15 +225,22 @@ let contadorMario = 0;
 // ===================================
 
 function crearMario() {
+
     contadorMario++;
 
-    const nuevoMario = new Mario(`Mario ${contadorMario}`);
+    const indice = (contadorMario - 1) % nombres.length;
+
+    const nombre = nombres[indice];
+
+    const imagen = ruta.replace("super-mario-bross.webp", sprite[indice]);
+
+    const nuevoMario = new Mario(nombre, imagen);
 
     marios.push(nuevoMario);
 
     marioActivo = nuevoMario;
 
-    nuevoMario.mostrarMensaje(`${nuevoMario.nombre} ha sido creado.`);
+    nuevoMario.mostrarMensaje(`${nombre} ha sido creado.`);
 
     return nuevoMario;
 }
@@ -213,8 +248,6 @@ function crearMario() {
 // ===================================
 // 4. EVENTO: CREAR MARIO
 // ===================================
-
-document.querySelector("#btnCrearMario").addEventListener("click", crearMario);
 
 document.addEventListener("keydown", (evento) => {
     if (evento.code === "Enter") {
@@ -226,12 +259,6 @@ document.addEventListener("keydown", (evento) => {
 // 5. EVENTOS DE MOVIMIENTO
 // ===================================
 
-document.querySelector("#btnAvanzar").addEventListener("click", () => {
-    if (marioActivo) {
-        marioActivo.avanzar(800);
-    }
-});
-
 document.addEventListener("keydown", (evento) => {
     if (evento.key === "ArrowRight" && marioActivo) {
         evento.preventDefault();
@@ -239,22 +266,10 @@ document.addEventListener("keydown", (evento) => {
     }
 });
 
-document.querySelector("#btnRetroceder").addEventListener("click", () => {
-    if (marioActivo) {
-        marioActivo.retroceder(800);
-    }
-});
-
 document.addEventListener("keydown", (evento) => {
     if (evento.key === "ArrowLeft" && marioActivo) {
         evento.preventDefault();
         marioActivo.retroceder(800);
-    }
-});
-
-document.querySelector("#btnSaltar").addEventListener("click", () => {
-    if (marioActivo) {
-        marioActivo.saltar();
     }
 });
 
@@ -276,32 +291,40 @@ document.addEventListener("keydown", (evento) => {
 // 6. EVENTOS DE TRANSFORMACIÓN
 // ===================================
 
-document.querySelector("#btnAumentar").addEventListener("click", () => {
-    if (marioActivo) {
+document.addEventListener("keydown", (evento) => {
+    if (evento.key === "a") {
+        evento.preventDefault();
         marioActivo.aumentar();
     }
 });
 
-document.querySelector("#btnEncoger").addEventListener("click", () => {
-    if (marioActivo) {
+
+document.addEventListener("keydown", (evento) => {
+    if (evento.key === "e") {
+        evento.preventDefault();
         marioActivo.encoger();
     }
 });
 
-document.querySelector("#btnRotar").addEventListener("click", () => {
-    if (marioActivo) {
+document.addEventListener("keydown", (evento) => {
+    if (evento.key === "r") {
+        evento.preventDefault();
         marioActivo.rotar(90);
     }
 });
 
-document.querySelector("#btnDuplicar").addEventListener("click", () => {
-    if (marioActivo) {
+
+document.addEventListener("keydown", (evento) => {
+    if (evento.key === "d") {
+        evento.preventDefault();
         marioActivo.duplicar();
     }
 });
 
-document.querySelector("#btnReset").addEventListener("click", () => {
-    if (marioActivo) {
+
+document.addEventListener("keydown", (evento) => {
+    if (evento.code === "Backspace") {
+        evento.preventDefault();
         marioActivo.reiniciar();
     }
 });
