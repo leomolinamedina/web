@@ -20,7 +20,7 @@ class Mario {
 
         this.elemento.innerHTML = `
             <img
-                src="../assets/img/super-mario-bross.webp"
+                src="../assets/css/images/marioBros/super-mario-bross.webp"
                 alt="${this.nombre}"
                 draggable="false"
             >
@@ -216,6 +216,12 @@ function crearMario() {
 
 document.querySelector("#btnCrearMario").addEventListener("click", crearMario);
 
+document.addEventListener("keydown", (evento) => {
+    if (evento.code === "Enter") {
+        crearMario();
+    }
+});
+
 // ===================================
 // 5. EVENTOS DE MOVIMIENTO
 // ===================================
@@ -226,14 +232,42 @@ document.querySelector("#btnAvanzar").addEventListener("click", () => {
     }
 });
 
+document.addEventListener("keydown", (evento) => {
+    if (evento.key === "ArrowRight" && marioActivo) {
+        evento.preventDefault();
+        marioActivo.avanzar(800);
+    }
+});
+
 document.querySelector("#btnRetroceder").addEventListener("click", () => {
     if (marioActivo) {
         marioActivo.retroceder(800);
     }
 });
 
+document.addEventListener("keydown", (evento) => {
+    if (evento.key === "ArrowLeft" && marioActivo) {
+        evento.preventDefault();
+        marioActivo.retroceder(800);
+    }
+});
+
 document.querySelector("#btnSaltar").addEventListener("click", () => {
     if (marioActivo) {
+        marioActivo.saltar();
+    }
+});
+
+document.addEventListener("keydown", (evento) => {
+    if (evento.key === "ArrowUp" && marioActivo) {
+        evento.preventDefault();
+        marioActivo.saltar();
+    }
+});
+
+document.addEventListener("keydown", (evento) => {
+    if (evento.code === "Space" && marioActivo) {
+        evento.preventDefault();
         marioActivo.saltar();
     }
 });
